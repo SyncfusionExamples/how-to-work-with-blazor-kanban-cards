@@ -1,0 +1,96 @@
+﻿@page "/"
+
+<style>
+    .e-kanban .e-card .e-card-footer .e-card-footer-css.e-story {
+        background-image: url(https://syncfusion.atlassian.net/secure/viewavatar?size=medium&avatarId=15515&avatarType=issuetype);
+    }
+
+    .e-kanban .e-card .e-card-footer .e-card-footer-css.e-improvement {
+        background-image: url(https://syncfusion.atlassian.net/secure/viewavatar?size=medium&avatarId=15507&avatarType=issuetype);
+    }
+
+    .e-kanban .e-card .e-card-footer .e-card-footer-css.e-bug {
+        background-image: url(https://syncfusion.atlassian.net/secure/viewavatar?size=medium&avatarId=15503&avatarType=issuetype);
+    }
+
+    .e-kanban .e-card .e-card-footer {
+        justify-content: space-between;
+    }
+
+    .e-kanban .e-card .e-card-footer .e-card-footer-css {
+        height: 16px;
+        width: 16px;
+    }
+</style>
+
+<SfKanban TValue="Task" DataSource="@TaskDetails" KeyField="Status" AllowDragAndDrop="true">
+    <KanbanColumns>
+        <KanbanColumn HeaderText="To Do" KeyField="@(new List<string>() {"Open" })"></KanbanColumn>
+        <KanbanColumn HeaderText="In Progress" KeyField="@(new List<string>() {"InProgress" })"></KanbanColumn>
+        <KanbanColumn HeaderText="Testing" KeyField="@(new List<string>() {"Testing" })"></KanbanColumn>
+        <KanbanColumn HeaderText="Done" KeyField="@(new List<string>() {"Close" })"></KanbanColumn>
+    </KanbanColumns>
+    <KanbanCardSettings HeaderField="Title" ContentField="Summary"
+                        TagsField="CardTags" ShowHeader="true"
+                        GrabberField="Color" FooterCssField="ClassName"
+                        SelectionType="SelectionType.Multiple">
+    </KanbanCardSettings>
+</SfKanban>
+
+@code{
+    public class Task
+    {
+        public string Id { get; set; }
+        public string Title { get; set; }
+        public string Status { get; set; }
+        public string Summary { get; set; }
+        public string Assignee { get; set; }
+        public List<string> CardTags { get; set; }
+        public string Color { get; set; }
+        public List<string> ClassName { get; set; }
+    }
+
+    public List<Task> TaskDetails = new List<Task>()
+    {
+        new Task { Id = "Task 1", Title = "BLAZ-29001", Status = "Open",
+            Summary = "Analyze the new requirements gathered from the customer.", Assignee = "Nancy Davloio",
+            CardTags = new List<string>() { "Analyze", "Customer" }, Color = "#8b447a",  
+            ClassName = new List<string>() { "e-story" }
+        },
+        new Task { Id = "Task 2", Title = "BLAZ-29002", Status = "Open",
+            Summary = "Show the retrieved data from the server in grid control.", Assignee = "Andrew Fuller",
+            CardTags = new List<string>() { "Improvement" }, Color = "#7d7297",
+            ClassName = new List<string>() { "e-story" }
+        },
+        new Task { Id = "Task 3", Title = "BLAZ-29003", Status = "InProgress",
+            Summary = "Improve application performance", Assignee = "Janet Leverling",
+            CardTags = new List<string>() { "Meeting" }, Color = "#27AE60",
+            ClassName = new List<string>() { "e-bug" }
+        },
+        new Task { Id = "Task 4", Title = "BLAZ-29004", Status = "Testing",
+            Summary = "Fix the issues reported by the customer.", Assignee = "Janet Leverling",
+            CardTags = new List<string>() { "IE" }, Color = "#cc0000",
+            ClassName = new List<string>() { "e-improvement" }
+        },
+        new Task { Id = "Task 5", Title = "BLAZ-29005", Status = "Testing",
+            Summary = "Fix the issues reported in Safari browser.", Assignee = "Steven walker",
+            CardTags = new List<string>() { "Fix", "Safari" }, Color = "#cc0000",
+            ClassName = new List<string>() { "e-story" }
+        },
+        new Task { Id = "Task 6", Title = "BLAZ-29006", Status = "Close",
+            Summary = "Analyze SQL server 2008 connection.", Assignee = "Nancy Davloio",
+            CardTags = new List<string>() { "SQL" }, Color = "#7d7297",
+            ClassName = new List<string>() { "e-story" }
+        },
+        new Task { Id = "Task 7", Title = "BLAZ-29007", Status = "Close",
+            Summary = "Analyze grid control.", Assignee = "Margaret hamilt",
+            CardTags = new List<string>() { "Customer", "Grid" }, Color = "#cc0000",
+            ClassName = new List<string>() { "e-story" }
+        },
+        new Task { Id = "Task 8", Title = "BLAZ-29008", Status = "Close",
+            Summary = "Stored procedure for initial data binding of the grid.", Assignee = "Steven walker",
+            CardTags = new List<string>() { "Review", "IE" }, Color = "#8b447a",
+            ClassName = new List<string>() { "e-story" }
+        }
+    };
+}
