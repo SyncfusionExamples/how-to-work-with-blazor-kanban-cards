@@ -1,14 +1,10 @@
 # Working with Blazor Kanban Cards
 
-A concise Blazor sample demonstrating card customization and behaviors in the Syncfusion Blazor Kanban component for a WebAssembly application. The sample shows how to configure card headers, content templates, left-border colors, custom CSS classes, selection modes, and drag-and-drop behavior.
+A concise Blazor sample demonstrating card customization and behaviors in the [Blazor Kanban](https://www.syncfusion.com/gantt-sdk/blazor-kanban-board) component for a server application. The sample shows how to configure card headers, content templates, left-border colors, custom CSS classes, selection modes, and drag-and-drop behavior.
 
 ## Overview
 
 Use this project as a reference for common card-related scenarios in Kanban boards: customizing card appearance, enabling selection, and handling drag-and-drop operations. The examples are suitable for adapting to both simple and advanced card UIs.
-
-Documentation: https://blazor.syncfusion.com/documentation/kanban/cards
-
-Online examples: https://blazor.syncfusion.com/demos/kanban/default-functionalities?theme=bootstrap5
 
 ## Features
 
@@ -18,24 +14,43 @@ Online examples: https://blazor.syncfusion.com/demos/kanban/default-functionalit
 - Selection modes (single/multiple)
 - Drag-and-drop behavior and ordering
 
-## Prerequisites
+## Getting Started
 
-- Visual Studio 2022 (or later)
-- The .NET SDK required by the solution
+### Prerequisites
 
-## Run the project
+* [.NET SDK 10.0](https://dotnet.microsoft.com/en-us/download/dotnet/10.0) or later
+* [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or later
+* [Visual Studio Code](https://code.visualstudio.com/)
 
-1. Clone the repository to a local folder.
-2. Open the solution in Visual Studio 2022.
-3. Restore NuGet packages by rebuilding the solution or run `dotnet restore`.
-4. Build and run the project from Visual Studio.
+### Clone the repository
 
-Optional CLI commands:
-
-```powershell
-dotnet restore
-dotnet build
+```bash
+git clone https://github.com/SyncfusionExamples/how-to-work-with-blazor-kanban-cards.git
+cd how-to-work-with-blazor-kanban-cards
 ```
+
+### Run with Visual Studio
+
+1. Open the solution file using Visual Studio 2022 or later.
+2. Restore the NuGet packages by rebuilding the solution.
+3. Build the project to ensure there are no compilation errors.
+4. Run the project.
+
+### Run with .NET CLI
+
+```bash
+# Restore dependencies
+dotnet restore
+
+# Run the project
+dotnet run
+```
+
+## References
+
+**Documentation**: https://help.syncfusion.com/gantt-sdk/blazor/kanban/cards
+
+**Online example**: https://blazor.syncfusion.com/demos/kanban/default-functionalities?theme=fluent2
 
 ## Troubleshooting & support
 
